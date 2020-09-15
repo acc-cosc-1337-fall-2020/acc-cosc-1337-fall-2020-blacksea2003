@@ -10,12 +10,11 @@
 int main() 
 {
 	int num1;
-	int num2;
+	int num2 = 4;
 	cout<<"enter a number: ";
 	cin>>num1;
-	cout<<"enter a second number: ";
-	cin>>num2;
-	std::cout<<multiply_numbers(num1,num2);
+	
+	std::cout<<multiply_numbers(num1);
 	return 0;
 }
 
