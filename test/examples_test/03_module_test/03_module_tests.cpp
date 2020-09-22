@@ -13,3 +13,12 @@ TEST_CASE("test menu with switch function")
 	REQUIRE(menu(4) == "option 4");
 	REQUIRE(menu(10) == "Invalid Option");
 }
+
+TEST_CASE("test menu with switch function char")
+{
+	REQUIRE(menu('z') == "Invalid Option");
+	REQUIRE(menu('a') == "A");
+	REQUIRE(menu('b') == "B");
+	REQUIRE(menu('c') == "C");
+	REQUIRE(menu('y') == "Invalid Option");
+}
