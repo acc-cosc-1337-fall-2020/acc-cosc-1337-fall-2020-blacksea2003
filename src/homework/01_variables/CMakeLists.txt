@@ -2,7 +2,7 @@
 project(hw_01_library)
 
 add_library(hw_01_library "variables.cpp" "variables.h")
-add_executable(hw_01_exe "main.cpp" "variables.cpp")
+add_executable(hw_01_exe "main.cpp")
 
 
 
