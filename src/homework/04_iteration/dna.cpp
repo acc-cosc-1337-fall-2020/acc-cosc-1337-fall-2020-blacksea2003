@@ -1,4 +1,6 @@
 #include "dna.h"
+#include<iostream>
+using std::cout; using std::string;
 /*
 Write code for function get_gc_content that accepts
 a const reference string parameter and returns a double.
@@ -6,7 +8,21 @@ Calculate GC content:
 Iterate string count Gs and Cs, divide count by string length.
 Return quotient.
 */
+double get_gc_content(const string dna)
+{
+    int i = dna.length() - 1;
+    double GC_num = 0;
+    while(i >= 0)
+    {
+        if (dna[i] == 'G' || dna[i] == 'C')
+        {
+            GC_num++;
+        }
+        i--;
+    }
+    return GC_num / dna.length();
 
+}
 
 
 
@@ -14,7 +30,17 @@ Return quotient.
 Write code for function get_reverse_string that
 accepts a string parameter and returns a string reversed.
 */
-
+string get_reverse_string(string dna)
+{
+   int i = dna.length() - 1;
+    string reverse = "";
+    while(i >= 0)
+    {
+        reverse += dna[i];
+        i--;
+    }
+    return reverse;
+}
 
 
 /*
@@ -27,4 +53,30 @@ b. iterate local string variable and
 c. return string
 
 */
+string get_dna_complement(string dna)
+{
+    string compliment = "";
+    int i = dna.length() - 1;
+    while(i >= 0)
+    {
+        if(dna[i] == 'A')
+        {
+            compliment += 'T';
+        }
+        if(dna[i] == 'T')
+        {
+            compliment += 'A';
+        }
+        if(dna[i] == 'C')
+        {
+            compliment += 'G';
+        }
+        if(dna[i] == 'G')
+        {
+            compliment += 'C';
+        }
 
+        i--;
+    }
+    return compliment;
+}
