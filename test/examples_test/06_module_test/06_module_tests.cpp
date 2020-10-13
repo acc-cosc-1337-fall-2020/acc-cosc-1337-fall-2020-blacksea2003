@@ -65,3 +65,11 @@ TEST_CASE("Test bank account deposit default constructor")
 	account.deposit(100);
 	REQUIRE(account.get_balance() == 100);
 }
+TEST_CASE("test bank account bank balance static variable")
+{
+	BankAccount account1(1000);
+	BankAccount account2(3000);
+	BankAccount account3(2000);
+
+	REQUIRE(account1.get_bank_balance() == 6550);
+}
