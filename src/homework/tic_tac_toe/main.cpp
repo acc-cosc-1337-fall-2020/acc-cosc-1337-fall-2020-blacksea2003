@@ -7,16 +7,28 @@ int main()
 {
 	tic_tac_toe p;
 	std::string player;
-	cout<<"Enter 'X' or 'O': ";
+	int num;
+	char choice = 'y';
+
+	while(choice == 'y')
+	{
+	cout<<"\nEnter 'X' or 'O': ";
 	cin>>player;
 	p.start_game(player);
-	int num;
 	while(!p.game_over())
 	{
-		cout<<"enter a number from 1-9: ";
+		cout<<"\nenter a number from 1-9: ";
 		cin>>num;
 		p.mark_board(num);
 		p.display_board();
 	}
+	cout<<"\nwinner is: "<<p.get_winner();
+	cout<<"\nenter y to play again: ";
+	cin>>choice;
+	}
+
+
+
+
 	return 0;
 }
