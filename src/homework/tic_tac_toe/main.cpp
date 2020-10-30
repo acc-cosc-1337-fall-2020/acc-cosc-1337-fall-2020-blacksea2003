@@ -9,12 +9,14 @@ int main()
 	std::string player;
 	int num;
 	char choice = 'y';
+	cout<<"\nEnter 'X' or 'O': ";
+	cin>>player;
+	
 
 	while(choice == 'y')
 	{
-	cout<<"\nEnter 'X' or 'O': ";
-	cin>>player;
 	p.start_game(player);
+	
 	while(!p.game_over())
 	{
 		cout<<"\nenter a number from 1-9: ";
