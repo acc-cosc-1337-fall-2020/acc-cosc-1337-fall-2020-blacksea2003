@@ -12,6 +12,12 @@ enum class BANK_OPTIONS{DEPOSIT = 1, WITHDRAW =2, DISPLAY = 3};
 
 int main()
 {
+
+	BankAccount* a = new CheckingAccount();
+	unique_ptr<BankAccount> up_a = make_unique<CheckingAccount>();
+
+	srand (time(NULL));
+
 	/*BankAccount a;
 	cout<<a.get_balance()<<"\n";
 	CheckingAccount c(500);
@@ -48,7 +54,7 @@ int main()
 
 	BankAccount account(100), account1(500);
 	//BankAccount account2 = account + account1;
-*/
+
 	int choice;
 	char cont;
 	ATM atm;
@@ -76,7 +82,7 @@ int main()
 	cout<<"enter y to continue: "
 	cin>>cont;
 	} while (cont == 'y');
-/*
+
 	cout<<account2;//this is calling the friend overload << function
 
 	//cin>>account;

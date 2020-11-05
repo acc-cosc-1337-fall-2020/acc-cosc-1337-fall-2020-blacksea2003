@@ -15,17 +15,12 @@ ATM::ATM()
 
 void scan_card()
 {
-    customer_index = rand() % customers.size()-1 + 1;
-
-    cout<<"welcome to ACC Bank \n";
-    cout<<"1 - Checking Account\n";
-    cout<<"2- savings Acccount\n";
-    cout<<"enter your selection: \n";
+    cout<<"enter 1 for checking 2 for saving: ";
     cin>>account_index;
+    customer_index = rand() % customers.size()-1 + 1;
 }
 
 void ATM::display_balance()
 {
-    std::unique_ptr<BankAccount>& account = customers[customer_index].get_account(account_index-1);
-    cout<<"Balance: "<<account->get_balance()<<"\n";
+    cout<<"Balance: "<<customers[customer_index].get_account(account_index -1)<<"\n";
 }
