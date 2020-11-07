@@ -23,7 +23,7 @@ class BankAccount
 public:
     BankAccount() = default; //behave like the default constructor c++ creaates 
     explicit BankAccount(int b);
-    virtual int get_balance()const{return balance;}//inline function
+    virtual int get_balance()const = 0; //inline function
     void deposit(int amount);
     void withdraw(int amount);
     friend void display_balance(const BankAccount& a);//NOT A CLASS FUNCTION - it is a free function
@@ -31,7 +31,7 @@ public:
     static int get_bank_balance(){return bank_balance;}
     friend std::ostream& operator<<(std::ostream& out, const BankAccount& a);
     friend std::istream& operator>>(std::istream& in, BankAccount& a);
-    friend BankAccount operator+(const BankAccount& a1, const BankAccount& a2);
+    //friend BankAccount operator+(const BankAccount& a1, const BankAccount& a2);
 
 protected:
 

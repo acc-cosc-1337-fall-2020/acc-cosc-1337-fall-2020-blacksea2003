@@ -19,10 +19,8 @@ int main()
 	
 	while(!p.game_over())
 	{
-		cout<<"\nenter a number from 1-9: ";
-		cin>>num;
-		p.mark_board(num);
-		p.display_board();
+		cin>>p;
+		cout<< p;
 	}
 	cout<<"\nwinner is: "<<p.get_winner();
 	cout<<"\nenter y to play again: ";

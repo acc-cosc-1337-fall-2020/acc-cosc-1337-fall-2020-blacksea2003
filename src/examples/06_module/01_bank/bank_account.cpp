@@ -9,6 +9,10 @@ BankAccount::BankAccount(int b) : balance(b)
     bank_balance += balance;
 }
 
+int BankAccount::get_balance() const
+{
+    return balance;
+}
 
 void BankAccount::deposit(int amount)
 {   
@@ -44,18 +48,19 @@ std::ostream& operator<<(std::ostream& out, const BankAccount& a)
 }
 std::istream& operator>>(std::istream& in, BankAccount& a)
 {
+    int test = balance;
     int amount;
     std::cout<<"Enter amount: ";
     in>>amount;
     a.balance += amount;
     return in;
 }
-BankAccount operator+(const BankAccount& a1, const BankAccount& a2)
-{
-    BankAccount account(a1.balance + a2.balance);
+// BankAccount operator+(const BankAccount& a1, const BankAccount& a2)
+// {
+//     BankAccount account(a1.balance + a2.balance);
 
-    return account;
-}
+//     return account;
+// }
 // free functions do not belong to the bankaccount class
 
 void display_bank_account_data(BankAccount& b)

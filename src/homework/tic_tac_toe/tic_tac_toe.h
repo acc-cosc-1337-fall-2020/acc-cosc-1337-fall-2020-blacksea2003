@@ -11,8 +11,12 @@ class tic_tac_toe{
         void start_game(std::string first_player);
         void mark_board(int position);
         std::string get_player() const;
-        void display_board() const;
     //homework 6
+        std::string get_winner();
+    //homework 7
+        friend std::ostream& operator<<(std::ostream& out, const tic_tac_toe& num);
+        friend std::istream& operator>>(std::istream& in, tic_tac_toe& num);
+    //homework 8
         std::string get_winner();
 
     private:
@@ -28,6 +32,8 @@ class tic_tac_toe{
         bool check_diagonal_win();
         void set_winner();
         std::string winner;
+    //hoemwork 8
+        void set_winner();
 
 };
 #endif
